@@ -1,0 +1,59 @@
+﻿@model EnglishCenter.Models.KhoaHoc
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>KhoaHoc</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.id_gv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_gv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ngaybatdau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ngaybatdau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ngayketthuc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ngayketthuc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_level)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

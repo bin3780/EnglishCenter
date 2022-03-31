@@ -1,0 +1,65 @@
+﻿@model EnglishCenter.Models.KhoaHoc
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>KhoaHoc</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.id_gv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_gv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ngaybatdau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ngaybatdau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ngayketthuc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ngayketthuc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_level)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_level)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
