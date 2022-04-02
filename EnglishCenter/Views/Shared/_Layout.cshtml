@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#" style="font-family:VT323;color : rgb(246, 69, 69);font-size : 65px">BTI<img src="~/Content/IMG/1.png" width="65" height="80" /></a>
+            <a class="navbar-brand" href="#" style="font-family :VT323;color : rgb(246, 69, 69);font-size : 65px">BTI<img src="~/Content/IMG/1.png" width="65" height="80" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -30,7 +30,7 @@
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Khoá Học</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">Tạo khoá học</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="@Url.Action("About","Home")" >About</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Separated link</a>
                         </div>
@@ -47,15 +47,16 @@
         @RenderBody()
         <hr />
         <footer>
-            <div class="logo">
-                <a href="@Url.Action("Index","Home")" style="font-family:VT323;font-size:25px;color :black">&copy;Trung tâm ngoại ngữ BTI<img src="~/Content/IMG/1.png" width="30" height="35" /></a>
-                <div class="logopayment">
-
-                    <a href="https://www.paypal.com"><img width="50" src="~/Content/IMG/logo-paypal.png" /></a>
-                    <a href="https://online.mbbank.com.vn/"><img width="50" src="~/Content/IMG/internetbanking.jpg" /></a>
-                    <a href="https://www.mastercard.com.vn"><img width="50" src="~/Content/IMG/mastercard.png" /></a>
-                    <img width="50" src="~/Content/IMG/tienmat.jpg" />
-                    <a href="https://www.visa.com.vn"> <img width="50" src="~/Content/IMG/visa.png" /> </a>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6"> <a href="@Url.Action("Index","Home")" style="font-family:VT323;font-size:25px;color :black">&copy;Trung tâm ngoại ngữ BTI<img src="~/Content/IMG/1.png" width="30" height="35" /></a></div>      
+                    <div class="col-lg-6">
+                        <a href="https://www.paypal.com"><img width="50" src="~/Content/IMG/logo-paypal.png" /></a>
+                        <a href="https://online.mbbank.com.vn/"><img width="50" src="~/Content/IMG/internetbanking.jpg" /></a>
+                        <a href="https://www.mastercard.com.vn"><img width="50" src="~/Content/IMG/mastercard.png" /></a>
+                        <img width="50" src="~/Content/IMG/tienmat.jpg" />
+                        <a href="https://www.visa.com.vn"> <img width="50" src="~/Content/IMG/visa.png" /> </a>
+                    </div>
                 </div>
             </div>
     </footer>

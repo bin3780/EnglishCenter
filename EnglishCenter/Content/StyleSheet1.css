@@ -3881,6 +3881,7 @@ fieldset:disabled .btn {
     font-weight: 400;
     color: #eb6864;
     text-decoration: none;
+    align-items :center;
 }
 
     .btn-link:hover {
@@ -3980,7 +3981,7 @@ fieldset:disabled .btn {
     margin: 0;
     font-size: 1rem;
     color: #222;
-    text-align: left;
+    text-align: center;
     list-style: none;
     background-color: #fff;
     background-clip: padding-box;
@@ -4212,7 +4213,7 @@ fieldset:disabled .btn {
     clear: both;
     font-weight: 400;
     color: #222;
-    text-align: inherit;
+    text-align: center;
     text-decoration: none;
     white-space: nowrap;
     background-color: transparent;
