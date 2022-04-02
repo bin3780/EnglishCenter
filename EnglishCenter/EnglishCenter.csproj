@@ -188,6 +188,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\IMG\1.png" />
+    <Content Include="Content\IMG\About1.png" />
+    <Content Include="Content\IMG\About2.png" />
+    <Content Include="Content\IMG\About3.png" />
+    <Content Include="Content\IMG\demo.m4v" />
     <Content Include="Content\IMG\internetbanking.jpg" />
     <Content Include="Content\IMG\logo-paypal.png" />
     <Content Include="Content\IMG\mastercard.png" />
