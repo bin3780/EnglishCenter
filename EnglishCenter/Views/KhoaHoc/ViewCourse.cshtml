@@ -1,0 +1,60 @@
+﻿@model IEnumerable<EnglishCenter.Models.KhoaHoc>
+
+@{
+    ViewBag.Title = "ViewCourse";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<a  href ="@Url.Action("Index","Home")">
+    <img src="@Url.Content("~/Content/IMG/icons8-back-64.png")" width="35" height="35"/>
+</a>
+<div>
+    <h4>KhoaHoc</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @foreach (var item in Model)
+    {
+         <dt>
+            Khoá học
+         </dt>
+
+        <dd>
+            @Html.DisplayNameFor(model => model.tenkhoahoc)
+        </dd>
+        <dt>
+            Giáo viên :
+        </dt>
+
+        <dd>
+            @Html.DisplayNameFor(model => model.id_gv)
+        </dd>
+
+        <dt>
+            Ngày bắt đầu khoá
+        </dt>
+
+        <dd>
+            @Html.DisplayNameFor(model => model.ngaybatdau)
+        </dd>
+
+        <dt>
+            Ngày kết thúc khoá
+        </dt>
+
+        <dd>
+            @Html.DisplayNameFor(model => model.ngayketthuc)
+        </dd>
+
+        <dt>
+            Giá
+        </dt>
+
+        <dd>
+            @Html.DisplayNameFor(model => model.gia)
+        </dd>
+
+    }
+    </dl>
+    
+</div>
+

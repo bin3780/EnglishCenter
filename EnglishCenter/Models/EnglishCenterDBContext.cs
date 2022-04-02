@@ -33,11 +33,6 @@ namespace EnglishCenter.Models
                 .Property(e => e.gia)
                 .IsFixedLength();
 
-            modelBuilder.Entity<Level>()
-                .HasMany(e => e.KhoaHoc)
-                .WithRequired(e => e.Level)
-                .HasForeignKey(e => e.id_level)
-                .WillCascadeOnDelete(false);
         }
     }
 }
