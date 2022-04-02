@@ -12,6 +12,10 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 @import url("https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap");
+h1.payment {
+   color : black;
+   font-size: 20px;
+}
 .navbar-nav {
     font-family: 'VT323', monospace;
     font-size : 30px;
