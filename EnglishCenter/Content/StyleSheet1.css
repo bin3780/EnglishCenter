@@ -12,7 +12,10 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 @import url("https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap");
-
+.navbar-nav {
+    font-family: 'VT323', monospace;
+    font-size : 30px;
+}
 :root {
     --bs-blue: #eb6864;
     --bs-indigo: #6610f2;
@@ -244,7 +247,7 @@ sup {
 
 a {
     color: #eb6864;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
     a:hover {
@@ -3873,7 +3876,7 @@ fieldset:disabled .btn {
 .btn-link {
     font-weight: 400;
     color: #eb6864;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
     .btn-link:hover {
