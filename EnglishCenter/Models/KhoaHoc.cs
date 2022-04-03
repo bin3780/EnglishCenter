@@ -23,8 +23,8 @@ namespace EnglishCenter.Models
         [StringLength(10)]
         public string gia { get; set; }
 
-        public int id_level { get; set; }
+        public string tenkhoahoc { get; set; }
 
-        public virtual Level Level { get; set; }
+        //public virtual Level Level { get; set; }
     }
 }

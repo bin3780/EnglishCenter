@@ -1,37 +1,40 @@
 ﻿@model IEnumerable<EnglishCenter.Models.KhoaHoc>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Quản lý Khoá Học";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Quản lý Khoá Học</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Tạo khoá học mới", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.id_gv)
+            Khoá Học
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ngaybatdau)
+            Giáo Viên
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ngayketthuc)
+            Ngày bắt đầu
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.gia)
+            Ngày kết thúc
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.id_level)
+            Giá
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tenkhoahoc)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.id_gv)
         </td>
@@ -45,7 +48,6 @@
             @Html.DisplayFor(modelItem => item.gia)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.id_level)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |

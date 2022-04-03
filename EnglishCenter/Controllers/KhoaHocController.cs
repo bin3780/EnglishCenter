@@ -19,7 +19,11 @@ namespace EnglishCenter.Controllers
         {
             return View(db.KhoaHocs.ToList());
         }
+        public ActionResult ViewCourse()
+        {
 
+            return View(db.KhoaHocs.ToList());
+        }
         // GET: KhoaHoc/Details/5
         public ActionResult Details(int? id)
         {
