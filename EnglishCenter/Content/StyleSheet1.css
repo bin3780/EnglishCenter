@@ -322,7 +322,7 @@ svg {
 
 table {
     caption-side: bottom;
-    border-collapse: collapse;
+    border-collapse: ;
 }
 
 caption {
@@ -2135,7 +2135,7 @@ progress {
     --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
     width: 100%;
     margin-bottom: 1rem;
-    color: #222;
+    color: rgb(47, 210, 216);
     vertical-align: top;
     border-color: #dee2e6;
 }
