@@ -37,14 +37,9 @@
                     </li>
                 </ul>
                 <div>
-                    <form class="d-flex" style="margin : 0px 100px 0px 0px;">
-                        <input class="form-control me-sm-2" type="text" placeholder="Search">
-                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                    </form>
-                </div>
-                <div>
                  
-                    <a  href="@Url.Action("Login", "Account")" class="btn btn-primary">Đăng Nhập</a>
+                   @Html.Partial("_LoginPartial")
+
                 </div>
             </div>
         </div>
