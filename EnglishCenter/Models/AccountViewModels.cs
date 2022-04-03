@@ -72,13 +72,16 @@ namespace EnglishCenter.Models
         [Display(Name = "Họ Tên")]
         public string UserName { get; set; }
         [Required]
+        [Display(Name = "Số Điện Thoại")]
+        public string PhoneNumber { get; set; }
+        [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Mật Khẩu")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
+        [Display(Name = "Nhập Lại Mật Khẩu")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }

@@ -192,6 +192,11 @@ namespace EnglishCenter.Controllers
         {
             return View();
         }
+        //hàm trả thông tin user
+        public ActionResult AboutUser()
+        {
+            return View();
+        }
 
         //
         // POST: /Account/ForgotPassword

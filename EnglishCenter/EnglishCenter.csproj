@@ -257,6 +257,7 @@
     <Content Include="Views\KhoaHoc\Details.cshtml" />
     <Content Include="Views\KhoaHoc\Edit.cshtml" />
     <Content Include="Views\KhoaHoc\Index.cshtml" />
+    <Content Include="Views\Account\AboutUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
