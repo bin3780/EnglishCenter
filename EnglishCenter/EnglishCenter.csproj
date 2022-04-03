@@ -189,13 +189,19 @@
   <ItemGroup>
     <Content Include="Content\IMG\1.png" />
     <Content Include="Content\IMG\icons8-back-64.png" />
+    <Content Include="Content\IMG\internetbanking.jpg" />
+    <Content Include="Content\IMG\logo-paypal.png" />
+    <Content Include="Content\IMG\mastercard.png" />
+    <Content Include="Content\IMG\tienmat.jpg" />
     <Content Include="Content\IMG\Untitled-1.jpg" />
+    <Content Include="Content\IMG\visa.png" />
     <Content Include="Content\StyleSheet1.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\VT323-Regular.ttf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
