@@ -87,6 +87,8 @@ h1.payment {
 }
 
 body {
+    background-image: url("IMG/mau-background-dep.jpg");
+    background-color: #cccccc;
     margin: 0;
     font-family: var(--bs-body-font-family);
     font-size: var(--bs-body-font-size);
@@ -4429,16 +4431,17 @@ fieldset:disabled .btn {
 
 @media (prefers-reduced-motion: reduce) {
     .nav-link {
+        color: #eb6864; 
         transition: none;
     }
 }
 
 .nav-link:hover, .nav-link:focus {
-    color: #bc5350;
+    color: #eb6864;
 }
 
 .nav-link.disabled {
-    color: #777;
+    color: #eb6864;
     pointer-events: none;
     cursor: default;
 }
@@ -4461,14 +4464,14 @@ fieldset:disabled .btn {
         }
 
         .nav-tabs .nav-link.disabled {
-            color: #777;
+            color: #eb6864;
             background-color: transparent;
             border-color: transparent;
         }
 
         .nav-tabs .nav-link.active,
         .nav-tabs .nav-item.show .nav-link {
-            color: #495057;
+            color: #eb6864;
             background-color: #fff;
             border-color: #dee2e6 #dee2e6 #fff;
         }
@@ -8821,6 +8824,7 @@ fieldset:disabled .btn {
 }
 
 .bg-primary {
+    img
     --bs-bg-opacity: 1;
     background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
 }
@@ -8851,8 +8855,7 @@ fieldset:disabled .btn {
 }
 
 .bg-light {
-    --bs-bg-opacity: 1;
-    background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+    background-image : url("IMG/219458.jpg")
 }
 
 .bg-dark {
@@ -8868,6 +8871,10 @@ fieldset:disabled .btn {
 .bg-white {
     --bs-bg-opacity: 1;
     background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
+}
+.bg-customcolor {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(230, 104, 245)), var(--bs-bg-opacity)) !important;
 }
 
 .bg-body {

@@ -189,11 +189,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\IMG\1.png" />
+    <Content Include="Content\IMG\219458.jpg" />
+    <Content Include="Content\IMG\internetbanking-removebg-preview.png" />
     <Content Include="Content\IMG\internetbanking.jpg" />
     <Content Include="Content\IMG\logo-paypal.png" />
+    <Content Include="Content\IMG\mastercard-removebg-preview.png" />
     <Content Include="Content\IMG\mastercard.png" />
+    <Content Include="Content\IMG\mau-background-dep.jpg" />
+    <Content Include="Content\IMG\tienmat-removebg-preview.png" />
     <Content Include="Content\IMG\tienmat.jpg" />
     <Content Include="Content\IMG\Untitled-1.jpg" />
+    <Content Include="Content\IMG\visa-removebg-preview.png" />
     <Content Include="Content\IMG\visa.png" />
     <Content Include="Content\StyleSheet1.css" />
     <Content Include="favicon.ico" />
