@@ -189,8 +189,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\IMG\1.png" />
+    <Content Include="Content\IMG\219458.png" />
     <Content Include="Content\IMG\icons8-back-64.png" />
-    <Content Include="Content\IMG\219458.jpg" />
     <Content Include="Content\IMG\internetbanking-removebg-preview.png" />
     <Content Include="Content\IMG\About1.png" />
     <Content Include="Content\IMG\About2.png" />
@@ -267,6 +267,7 @@
     <Content Include="Views\Shared\_Layout teacher.cshtml" />
     <Content Include="Views\Teacher\IndexTeacher.cshtml" />
     <Content Include="Views\Teacher\GiaoAn.cshtml" />
+    <Content Include="Views\Account\Register_Teacher.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

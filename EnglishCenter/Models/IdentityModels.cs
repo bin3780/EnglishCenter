@@ -30,6 +30,6 @@ namespace EnglishCenter.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<EnglishCenter.Models.KhoaHoc> KhoaHocs { get; set; }
+        public DbSet<KhoaHoc> KhoaHocs { get; set; }
     }
 }
