@@ -323,8 +323,9 @@ svg {
 }
 
 table {
+    width : 100%;
     caption-side: bottom;
-    border-collapse: ;
+    border-collapse: initial;
 }
 
 caption {
@@ -8855,7 +8856,7 @@ fieldset:disabled .btn {
 }
 
 .bg-light {
-    background-image : url("IMG/219458.jpg")
+    background-image : url("IMG/galaxy1.jpg")
 }
 
 .bg-dark {

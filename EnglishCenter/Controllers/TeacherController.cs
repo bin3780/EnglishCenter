@@ -17,5 +17,9 @@ namespace EnglishCenter.Controllers
         {
             return View();
         }
+        public ActionResult QuanlyLopHoc()
+        {
+            return View();
+        }
     }
 }
