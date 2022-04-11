@@ -79,15 +79,19 @@ namespace EnglishCenter.Controllers
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
-            
+            bool checkstudent = User.IsInRole("Student");// BIN DNAG KET CHỖ NÀY LÀM SAO ĐỂ LẤY ROLE CỦA CÁI
+                                                         // ACCOUNT VỪA ĐĂNG NHẬP ĐỂ TRẢ VỀ ĐÚNG TRANG CỦA NÓ
+
+            bool checkteacher = User.IsInRole("Teacher");
+            bool checkAdmin = User.IsInRole("Admin");
             switch (result)
             {
                 case SignInStatus.Success:
-                    if(model.UserRole =="Student")
+                    if (checkstudent == true)
                     {
-                        return RedirectToLocal(returnUrl); // trỏ tới trang index student
+                        return RedirectToAction("About", "Home"); // trỏ tới trang index student
                     }
-                    if(model.UserRole =="Admin")
+                    if(checkAdmin == true)
                     {
                         return RedirectToLocal(returnUrl); // trỏ tới index admin
                     }    
