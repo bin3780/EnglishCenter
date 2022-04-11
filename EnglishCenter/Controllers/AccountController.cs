@@ -13,6 +13,7 @@ using EnglishCenter.Models;
 namespace EnglishCenter.Controllers
 {
     [Authorize]
+    //[Authorize(Roles = "Student")]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
