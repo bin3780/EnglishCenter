@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using EnglishCenter.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace EnglishCenter.Controllers
 {
@@ -137,25 +138,33 @@ namespace EnglishCenter.Controllers
         }
 
         //
-        // GET: /Account/Register
+        // GET: /Account/RegisterStudent
         [AllowAnonymous]
-        public ActionResult Register()
+        public ActionResult RegisterStudent()
         {
             ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Student")).ToList(), "Name","Name");
             return View();
         }
 
         //
-        // POST: /Account/Register
+        // POST: /Account/RegisterStudent
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterStudentViewModel model)
+        public async Task<ActionResult> RegisterStudent(RegisterStudentViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
+                var roleStore = new RoleStore<IdentityRole>(context);
+                var roleManager = new RoleManager<IdentityRole>(roleStore);
+                /////////////////////////////
+                var userStore = new UserStore<ApplicationUser>(context);
+                var userManager = new UserManager<ApplicationUser>(userStore);
+                //
+                userManager.AddToRole(user.Id, "Student");
+
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
@@ -192,8 +201,15 @@ namespace EnglishCenter.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
+                var roleStore = new RoleStore<IdentityRole>(context);
+                var roleManager = new RoleManager<IdentityRole>(roleStore);
+                /////////////////////////////
+                var userStore = new UserStore<ApplicationUser>(context);
+                var userManager = new UserManager<ApplicationUser>(userStore);
+                //
+                userManager.AddToRole(user.Id, "Teacher");
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);

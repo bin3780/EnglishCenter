@@ -10,8 +10,8 @@
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">@User.Identity.GetUserName()</a>
                 <div class="dropdown-menu" style="background-color:aqua; ">
                     <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">Đăng Xuất</a>
-                    <a class="dropdown-item" href="@Url.Action("ChangePassword","Manage")">Đổi Mật Khẩu</a>
-                    <a class="dropdown-item" href="@Url.Action("AboutUser","Account")">Thông Tin</a>
+                    <a class="dropdown-item" href="@Url.Action("ChangePassword", "Manage")">Đổi Mật Khẩu</a>
+                    <a class="dropdown-item" href="@Url.Action("AboutUser", "Account")">Thông Tin</a>
                 </div>
             </li>
         </ul>
@@ -19,8 +19,8 @@
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
+<ul class="nav navbar-nav navbar-right">
+    <li > @Html.ActionLink("Đăng Nhập", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+</ul>
+ }
 
-        <li class="btn btn-primary"> @Html.ActionLink("Đăng Nhập", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-    </ul>
-}
