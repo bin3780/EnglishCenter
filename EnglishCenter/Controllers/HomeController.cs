@@ -26,5 +26,24 @@ namespace EnglishCenter.Controllers
 
             return View();
         }
+
+        public ActionResult Course()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult tuition()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+        public ActionResult Route()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
     }
 }
