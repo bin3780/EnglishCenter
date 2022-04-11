@@ -65,7 +65,6 @@ namespace EnglishCenter.Models
         [Display(Name = "Phone Number")]
         public string Number { get; set; }
     }
-
     public class VerifyPhoneNumberViewModel
     {
         [Required]

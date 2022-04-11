@@ -189,8 +189,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\IMG\1.png" />
+    <Content Include="Content\IMG\219458.png" />
+    <Content Include="Content\IMG\adult.png" />
+    <Content Include="Content\IMG\children.png" />
     <Content Include="Content\IMG\icons8-back-64.png" />
-    <Content Include="Content\IMG\219458.jpg" />
+    <Content Include="Content\IMG\img home\english-communication.jpg" />
+    <Content Include="Content\IMG\img home\icon-good.png" />
+    <Content Include="Content\IMG\img home\icon-teacher.png" />
+    <Content Include="Content\IMG\img home\icon-time2.png" />
+    <Content Include="Content\IMG\img home\koliqicu.jpg" />
+    <Content Include="Content\IMG\img home\luyen-thi-ielts.jpg" />
+    <Content Include="Content\IMG\img home\mastercard.png" />
+    <Content Include="Content\IMG\img home\text home d1.png" />
+    <Content Include="Content\IMG\img home\tieng-anh-phong-van copy.jpg" />
+    <Content Include="Content\IMG\img home\topic.jpg" />
+    <Content Include="Content\IMG\img home\Training_2.jpg" />
     <Content Include="Content\IMG\internetbanking-removebg-preview.png" />
     <Content Include="Content\IMG\About1.png" />
     <Content Include="Content\IMG\About2.png" />
@@ -267,6 +280,10 @@
     <Content Include="Views\Shared\_Layout teacher.cshtml" />
     <Content Include="Views\Teacher\IndexTeacher.cshtml" />
     <Content Include="Views\Teacher\GiaoAn.cshtml" />
+    <Content Include="Views\Account\Register_Teacher.cshtml" />
+    <Content Include="Views\Home\Course.cshtml" />
+    <Content Include="Views\Home\tuition.cshtml" />
+    <Content Include="Views\Home\Route.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

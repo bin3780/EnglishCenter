@@ -17,9 +17,11 @@ namespace EnglishCenter.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private readonly ApplicationDbContext context;
 
         public AccountController()
         {
+            context = new ApplicationDbContext();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -60,7 +62,6 @@ namespace EnglishCenter.Controllers
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
-
         //
         // POST: /Account/Login
         [HttpPost]
@@ -139,6 +140,7 @@ namespace EnglishCenter.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Student")).ToList(), "Name","Name");
             return View();
         }
 
@@ -147,7 +149,7 @@ namespace EnglishCenter.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public async Task<ActionResult> Register(RegisterStudentViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -164,6 +166,44 @@ namespace EnglishCenter.Controllers
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
                     return RedirectToAction("Index", "Home");
+                }
+                AddErrors(result);
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
+        //
+        // GET: /Account/Register_Teacher
+        [AllowAnonymous]
+        public ActionResult Register_Teacher()
+        {
+            ViewBag.Name = new SelectList(context.Roles.Where(u => !u.Name.Contains("Teacher")).ToList(), "Name", "Name");
+            return View();
+        }
+
+        //
+        // POST: /Account/Register_Teacher
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Register_Teacher(RegisterTeacherViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var result = await UserManager.CreateAsync(user, model.Password);
+                if (result.Succeeded)
+                {
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
+                    // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
+                    // Send an email with this link
+                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+                    return RedirectToAction("IndexTeacher", "Teacher");
                 }
                 AddErrors(result);
             }
