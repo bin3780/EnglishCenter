@@ -27,7 +27,11 @@
         <th>
             Giá
         </th>
-        <th></th>
+        <th>Thêm</th>
+
+        <th>Xóa</th>
+
+        <th>Sửa</th>
     </tr>
 
 @foreach (var item in Model) {
@@ -54,6 +58,7 @@
             @Html.ActionLink("Details", "Details", new { id=item.id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.id })
         </td>
+       
     </tr>
 }
 
