@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using EnglishCenter.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Web.Security;
 
 namespace EnglishCenter.Controllers
 {
@@ -20,18 +21,18 @@ namespace EnglishCenter.Controllers
         //private ApplicationSing
         private ApplicationUserManager _userManager;
         private readonly ApplicationDbContext context;
-
+        private readonly IdentityUserRole userRole;// bảng aspnetUserRoles
+        private readonly IdentityRole roleManager; //Bảng aspnetRoles
         public AccountController()
         {
             context = new ApplicationDbContext();
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
-        {
-            UserManager = userManager;
-            SignInManager = signInManager;
-        }
-
+        //public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        //{
+        //    UserManager = userManager;
+        //    SignInManager = signInManager;
+        //}
         public ApplicationSignInManager SignInManager
         {
             get
@@ -78,26 +79,28 @@ namespace EnglishCenter.Controllers
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
+            var usermanager = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
-            bool checkstudent = User.IsInRole("Student");// BIN DNAG KET CHỖ NÀY LÀM SAO ĐỂ LẤY ROLE CỦA CÁI
-                                                         // ACCOUNT VỪA ĐĂNG NHẬP ĐỂ TRẢ VỀ ĐÚNG TRANG CỦA NÓ
+            var user = await usermanager.FindAsync(model.Email, model.Password);
 
-            bool checkteacher = User.IsInRole("Teacher");
-            bool checkAdmin = User.IsInRole("Admin");
+            //ApplicationUser user = HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>().FindById(User.Identity.GetUserId());
+            
+            var userid = user.Id.ToString();
+            var rolename = await usermanager.GetRolesAsync(userid);   
             switch (result)
             {
                 case SignInStatus.Success:
-                    if (checkstudent == true)
+                    if (rolename.Contains("Student"))
                     {
                         return RedirectToAction("About", "Home"); // trỏ tới trang index student
                     }
-                    if(checkAdmin == true)
+                    if (rolename.Contains("Admin"))
                     {
-                        return RedirectToLocal(returnUrl); // trỏ tới index admin
-                    }    
-                    if(model.UserRole=="Teacher")
+                        return RedirectToAction("Index", "Admin");  // trỏ tới index admin
+                    }
+                    if (rolename.Contains("Teacher"))
                     {
-                        return RedirectToAction("IndexTeacher", "Teacher");
+                        return RedirectToAction("IndexTeacher", "Teacher"); // trả về đúng trang của n
                     }    
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:

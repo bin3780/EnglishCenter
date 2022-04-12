@@ -172,17 +172,19 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\KhoaHocController.cs" />
+    <Compile Include="Controllers\KhoaHocsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AdminController.cs" />
     <Compile Include="Models\EnglishCenterDBContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\KhoaHoc.cs" />
     <Compile Include="Models\Level.cs" />
+    <Compile Include="Models\LopHoc.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -271,12 +273,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\KhoaHoc\Create.cshtml" />
-    <Content Include="Views\KhoaHoc\Delete.cshtml" />
-    <Content Include="Views\KhoaHoc\Details.cshtml" />
-    <Content Include="Views\KhoaHoc\Edit.cshtml" />
-    <Content Include="Views\KhoaHoc\Index.cshtml" />
-    <Content Include="Views\KhoaHoc\ViewCourse.cshtml" />
     <Content Include="Views\Shared\_Layout teacher.cshtml" />
     <Content Include="Views\Teacher\IndexTeacher.cshtml" />
     <Content Include="Views\Teacher\GiaoAn.cshtml" />
@@ -284,6 +280,13 @@
     <Content Include="Views\Home\Course.cshtml" />
     <Content Include="Views\Home\tuition.cshtml" />
     <Content Include="Views\Home\Route.cshtml" />
+    <Content Include="Views\KhoaHocs\Create.cshtml" />
+    <Content Include="Views\KhoaHocs\Delete.cshtml" />
+    <Content Include="Views\KhoaHocs\Details.cshtml" />
+    <Content Include="Views\KhoaHocs\Edit.cshtml" />
+    <Content Include="Views\KhoaHocs\Index.cshtml" />
+    <Content Include="Views\Shared\Layout_Admin.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

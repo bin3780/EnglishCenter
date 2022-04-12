@@ -14,13 +14,10 @@ namespace EnglishCenter.Models
 
         public virtual DbSet<KhoaHoc> KhoaHoc { get; set; }
         public virtual DbSet<Level> Level { get; set; }
+        public virtual DbSet<LopHoc> LopHoc { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<KhoaHoc>()
-                .Property(e => e.id_gv)
-                .IsFixedLength();
-
             modelBuilder.Entity<KhoaHoc>()
                 .Property(e => e.ngaybatdau)
                 .IsFixedLength();
@@ -33,6 +30,20 @@ namespace EnglishCenter.Models
                 .Property(e => e.gia)
                 .IsFixedLength();
 
+            modelBuilder.Entity<KhoaHoc>()
+                .HasMany(e => e.LopHoc)
+                .WithOptional(e => e.KhoaHoc)
+                .HasForeignKey(e => e.idkhoahoc);
+
+            modelBuilder.Entity<Level>()
+                .HasMany(e => e.KhoaHoc)
+                .WithOptional(e => e.Level)
+                .HasForeignKey(e => e.capdo);
+
+            modelBuilder.Entity<LopHoc>()
+                .Property(e => e.tenlophoc)
+                .IsFixedLength();
         }
     }
 }
+

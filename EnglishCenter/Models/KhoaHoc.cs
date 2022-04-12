@@ -9,10 +9,13 @@ namespace EnglishCenter.Models
     [Table("KhoaHoc")]
     public partial class KhoaHoc
     {
-        public int id { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public KhoaHoc()
+        {
+            LopHoc = new HashSet<LopHoc>();
+        }
 
-        [StringLength(10)]
-        public string id_gv { get; set; }
+        public int id { get; set; }
 
         [StringLength(10)]
         public string ngaybatdau { get; set; }
@@ -23,8 +26,14 @@ namespace EnglishCenter.Models
         [StringLength(10)]
         public string gia { get; set; }
 
+        [StringLength(100)]
         public string tenkhoahoc { get; set; }
 
-        //public virtual Level Level { get; set; }
+        public int? capdo { get; set; }
+
+        public virtual Level Level { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<LopHoc> LopHoc { get; set; }
     }
 }

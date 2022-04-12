@@ -15,7 +15,8 @@ namespace EnglishCenter.Models
             KhoaHoc = new HashSet<KhoaHoc>();
         }
 
-        public int Id { get; set; }
+        [Key]
+        public int Id_level { get; set; }
 
         [StringLength(50)]
         public string name { get; set; }

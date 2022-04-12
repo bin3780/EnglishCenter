@@ -10,21 +10,17 @@ using EnglishCenter.Models;
 
 namespace EnglishCenter.Controllers
 {
-    public class KhoaHocController : Controller
+    public class KhoaHocsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: KhoaHoc
+        // GET: KhoaHocs
         public ActionResult Index()
         {
             return View(db.KhoaHocs.ToList());
         }
-        public ActionResult ViewCourse()
-        {
 
-            return View(db.KhoaHocs.ToList());
-        }
-        // GET: KhoaHoc/Details/5
+        // GET: KhoaHocs/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -39,18 +35,19 @@ namespace EnglishCenter.Controllers
             return View(khoaHoc);
         }
 
-        // GET: KhoaHoc/Create
+        // GET: KhoaHocs/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: KhoaHoc/Create
+        // POST: KhoaHocs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,id_gv,ngaybatdau,ngayketthuc,gia,id_level")] KhoaHoc khoaHoc)
+        [Authorize(Roles = "Admin,Manager")]
+        public ActionResult Create([Bind(Include = "id,id_gv,ngaybatdau,ngayketthuc,gia,tenkhoahoc")] KhoaHoc khoaHoc)
         {
             if (ModelState.IsValid)
             {
@@ -62,7 +59,7 @@ namespace EnglishCenter.Controllers
             return View(khoaHoc);
         }
 
-        // GET: KhoaHoc/Edit/5
+        // GET: KhoaHocs/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -77,12 +74,14 @@ namespace EnglishCenter.Controllers
             return View(khoaHoc);
         }
 
-        // POST: KhoaHoc/Edit/5
+        // POST: KhoaHocs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,id_gv,ngaybatdau,ngayketthuc,gia,id_level")] KhoaHoc khoaHoc)
+        [Authorize(Roles = "Admin,Manager")]
+
+        public ActionResult Edit([Bind(Include = "id,id_gv,ngaybatdau,ngayketthuc,gia,tenkhoahoc")] KhoaHoc khoaHoc)
         {
             if (ModelState.IsValid)
             {
@@ -93,7 +92,8 @@ namespace EnglishCenter.Controllers
             return View(khoaHoc);
         }
 
-        // GET: KhoaHoc/Delete/5
+
+        // GET: KhoaHocs/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -108,9 +108,11 @@ namespace EnglishCenter.Controllers
             return View(khoaHoc);
         }
 
-        // POST: KhoaHoc/Delete/5
+        // POST: KhoaHocs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,Manager")]
+
         public ActionResult DeleteConfirmed(int id)
         {
             KhoaHoc khoaHoc = db.KhoaHocs.Find(id);
