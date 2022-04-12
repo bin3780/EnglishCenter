@@ -31,7 +31,7 @@ namespace EnglishCenter.Models
 
         public int? capdo { get; set; }
 
-        public virtual Level Level { get; set; }
+        //public virtual Level Level { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LopHoc> LopHoc { get; set; }

@@ -10,24 +10,24 @@ using EnglishCenter.Models;
 
 namespace EnglishCenter.Controllers
 {
-    public class KhoaHocsController : Controller
+    public class KhoaHocController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private EnglishCenterDBContext db = new EnglishCenterDBContext();
 
-        // GET: KhoaHocs
+        // GET: KhoaHoc
         public ActionResult Index()
         {
-            return View(db.KhoaHocs.ToList());
+            return View(db.KhoaHoc.ToList());
         }
 
-        // GET: KhoaHocs/Details/5
+        // GET: KhoaHoc/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            KhoaHoc khoaHoc = db.KhoaHocs.Find(id);
+            KhoaHoc khoaHoc = db.KhoaHoc.Find(id);
             if (khoaHoc == null)
             {
                 return HttpNotFound();
@@ -35,23 +35,22 @@ namespace EnglishCenter.Controllers
             return View(khoaHoc);
         }
 
-        // GET: KhoaHocs/Create
+        // GET: KhoaHoc/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: KhoaHocs/Create
+        // POST: KhoaHoc/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin,Manager")]
-        public ActionResult Create([Bind(Include = "id,id_gv,ngaybatdau,ngayketthuc,gia,tenkhoahoc")] KhoaHoc khoaHoc)
+        public ActionResult Create([Bind(Include = "id,ngaybatdau,ngayketthuc,gia,tenkhoahoc,capdo")] KhoaHoc khoaHoc)
         {
             if (ModelState.IsValid)
             {
-                db.KhoaHocs.Add(khoaHoc);
+                db.KhoaHoc.Add(khoaHoc);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -59,14 +58,14 @@ namespace EnglishCenter.Controllers
             return View(khoaHoc);
         }
 
-        // GET: KhoaHocs/Edit/5
+        // GET: KhoaHoc/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            KhoaHoc khoaHoc = db.KhoaHocs.Find(id);
+            KhoaHoc khoaHoc = db.KhoaHoc.Find(id);
             if (khoaHoc == null)
             {
                 return HttpNotFound();
@@ -74,14 +73,12 @@ namespace EnglishCenter.Controllers
             return View(khoaHoc);
         }
 
-        // POST: KhoaHocs/Edit/5
+        // POST: KhoaHoc/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin,Manager")]
-
-        public ActionResult Edit([Bind(Include = "id,id_gv,ngaybatdau,ngayketthuc,gia,tenkhoahoc")] KhoaHoc khoaHoc)
+        public ActionResult Edit([Bind(Include = "id,ngaybatdau,ngayketthuc,gia,tenkhoahoc,capdo")] KhoaHoc khoaHoc)
         {
             if (ModelState.IsValid)
             {
@@ -92,15 +89,14 @@ namespace EnglishCenter.Controllers
             return View(khoaHoc);
         }
 
-
-        // GET: KhoaHocs/Delete/5
+        // GET: KhoaHoc/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            KhoaHoc khoaHoc = db.KhoaHocs.Find(id);
+            KhoaHoc khoaHoc = db.KhoaHoc.Find(id);
             if (khoaHoc == null)
             {
                 return HttpNotFound();
@@ -108,15 +104,13 @@ namespace EnglishCenter.Controllers
             return View(khoaHoc);
         }
 
-        // POST: KhoaHocs/Delete/5
+        // POST: KhoaHoc/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Admin,Manager")]
-
         public ActionResult DeleteConfirmed(int id)
         {
-            KhoaHoc khoaHoc = db.KhoaHocs.Find(id);
-            db.KhoaHocs.Remove(khoaHoc);
+            KhoaHoc khoaHoc = db.KhoaHoc.Find(id);
+            db.KhoaHoc.Remove(khoaHoc);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

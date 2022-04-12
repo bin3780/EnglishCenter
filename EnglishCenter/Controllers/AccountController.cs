@@ -11,6 +11,7 @@ using Microsoft.Owin.Security;
 using EnglishCenter.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Web.Security;
+using static EnglishCenter.Controllers.ManageController;
 
 namespace EnglishCenter.Controllers
 {
@@ -20,9 +21,10 @@ namespace EnglishCenter.Controllers
         private ApplicationSignInManager _signInManager;
         //private ApplicationSing
         private ApplicationUserManager _userManager;
+        private ManageMessageId message;
         private readonly ApplicationDbContext context;
         private readonly IdentityUserRole userRole;// bảng aspnetUserRoles
-        private readonly IdentityRole roleManager; //Bảng aspnetRoles
+        private readonly IdentityRole roleManager; //Bảng aspnetRoles;
         public AccountController()
         {
             context = new ApplicationDbContext();
@@ -175,7 +177,7 @@ namespace EnglishCenter.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
 
                 if (result.Succeeded)
@@ -212,6 +214,7 @@ namespace EnglishCenter.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register_Teacher(RegisterTeacherViewModel model)
         {
+
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
@@ -228,7 +231,7 @@ namespace EnglishCenter.Controllers
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
                     await this.UserManager.AddToRoleAsync(user.Id, model.UserRole = "Teacher");
-                    return RedirectToAction("IndexTeacher", "Teacher");
+                    return RedirectToAction("Index", "Admin");
                 }
                 AddErrors(result);
             }

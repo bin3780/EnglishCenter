@@ -13,7 +13,7 @@ namespace EnglishCenter.Models
         }
 
         public virtual DbSet<KhoaHoc> KhoaHoc { get; set; }
-        public virtual DbSet<Level> Level { get; set; }
+        //public virtual DbSet<Level> Level { get; set; }
         public virtual DbSet<LopHoc> LopHoc { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -35,10 +35,10 @@ namespace EnglishCenter.Models
                 .WithOptional(e => e.KhoaHoc)
                 .HasForeignKey(e => e.idkhoahoc);
 
-            modelBuilder.Entity<Level>()
+            /*modelBuilder.Entity<Level>()
                 .HasMany(e => e.KhoaHoc)
-                .WithOptional(e => e.Level)
-                .HasForeignKey(e => e.capdo);
+                .WithOptional(e => e.capdo)
+                .HasForeignKey(e => e.id);*/
 
             modelBuilder.Entity<LopHoc>()
                 .Property(e => e.tenlophoc)
