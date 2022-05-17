@@ -83,6 +83,8 @@ namespace EnglishCenter.Models
         public string ConfirmPassword { get; set; }
         public string UserRole { get; set; }
     }
+
+
     public class RegisterTeacherViewModel
     {
         [Required]

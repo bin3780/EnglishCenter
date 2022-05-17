@@ -273,23 +273,23 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Shared\_Layout teacher.cshtml" />
     <Content Include="Views\Teacher\IndexTeacher.cshtml" />
     <Content Include="Views\Teacher\GiaoAn.cshtml" />
     <Content Include="Views\Account\Register_Teacher.cshtml" />
     <Content Include="Views\Home\Course.cshtml" />
     <Content Include="Views\Home\tuition.cshtml" />
     <Content Include="Views\Home\Route.cshtml" />
-    <Content Include="Views\Shared\Layout_Admin.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\KhoaHoc\Create.cshtml" />
     <Content Include="Views\KhoaHoc\Delete.cshtml" />
     <Content Include="Views\KhoaHoc\Details.cshtml" />
     <Content Include="Views\KhoaHoc\Edit.cshtml" />
     <Content Include="Views\KhoaHoc\Index.cshtml" />
+    <Content Include="Views\Shared\NavBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Class\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
